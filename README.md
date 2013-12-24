@@ -15,5 +15,5 @@ Supported devices:
 
 This project let you personalize the UUID, the major and the minor values, as well as the power. It is based on [BeaconEmitter for mac project](https://github.com/lgaches/BeaconEmitter).
 
-![iBeaconEmitter](http://cl.ly/image/2D0h2s2X3U2k/ibeacon.png)
+![iBeaconEmitter](http://cl.ly/image/0G0d3p3D1x21/ibeacon.png)
 
