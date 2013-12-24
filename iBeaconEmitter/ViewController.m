@@ -31,11 +31,16 @@
 
     NSUUID *proximityUUID = [NSUUID UUID];
     [self.uuid setText:[proximityUUID UUIDString]];
+    
+    self.identifier.text = @"Pangea Beacon";
+    self.major.text = @"1";
+    self.minor.text = @"1";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
