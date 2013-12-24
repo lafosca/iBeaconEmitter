@@ -7,6 +7,10 @@
 //
 
 #import "ViewController.h"
+
+#define BEACON_UUID @"8B1026A2-3F02-4074-BBA6-626FE3BD73F6"
+#define IDENTIFIER @"cat.lafosca.beaconnect.pangea"
+
 @import CoreLocation;
 
 @interface ViewController ()
@@ -29,12 +33,11 @@
     [super viewDidLoad];
     _manager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
 
-    NSUUID *proximityUUID = [NSUUID UUID];
-    [self.uuid setText:[proximityUUID UUIDString]];
+    [self.uuid setText:BEACON_UUID];
+    [self.identifier setText:IDENTIFIER];
     
-//    self.identifier.text = @"Pangea Beacon";
-//    self.major.text = @"1";
-//    self.minor.text = @"1";
+    self.major.text = @"1";
+    self.minor.text = @"1";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
