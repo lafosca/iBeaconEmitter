@@ -32,11 +32,29 @@
     NSUUID *proximityUUID = [NSUUID UUID];
     [self.uuid setText:[proximityUUID UUIDString]];
     
-    self.identifier.text = @"Pangea Beacon";
-    self.major.text = @"1";
-    self.minor.text = @"1";
+//    self.identifier.text = @"Pangea Beacon";
+//    self.major.text = @"1";
+//    self.minor.text = @"1";
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self layoutTextFields];
+    [self.startBeaconButton.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.startBeaconButton.layer setBorderWidth:1.0];
+    [self.startBeaconButton.layer setCornerRadius:2.0];
+}
+- (void)layoutTextFields {
+    for (UITextField *textField in [self allTextFields]) {
+        UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 0)];
+        textField.leftView = paddingView;
+        textField.leftViewMode = UITextFieldViewModeAlways;
+    }
+}
+
+- (NSArray *)allTextFields {
+   return @[self.uuid, self.identifier, self.major, self.minor, self.power];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -79,8 +97,7 @@
 
 - (IBAction)changeBeaconState:(UIButton *)sender {
     
-    NSArray *textFields = @[self.uuid, self.identifier, self.major, self.minor, self.power];
-    for (UITextField *textField in textFields) {
+    for (UITextField *textField in [self allTextFields]) {
         [textField resignFirstResponder];
     }
     
@@ -119,6 +136,12 @@
     
     NSUUID *proximityUUID = [NSUUID UUID];
     [self.uuid setText:[proximityUUID UUIDString]];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    for (UITextField *textField in [self allTextFields]) {
+        [textField resignFirstResponder];
+    }
 }
 
 @end
