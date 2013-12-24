@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BNMBeaconRegion.h"
+@import CoreLocation;
 
 @interface ViewController ()
 
@@ -91,16 +92,14 @@
         
         NSUUID *proximityUUID  = [[NSUUID alloc] initWithUUIDString:self.uuid.text];
         if (proximityUUID) {
-            BNMBeaconRegion *beacon = [[BNMBeaconRegion alloc] initWithProximityUUID:proximityUUID
+            CLBeaconRegion *beacon = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID
                                                                                major:[self.major.text intValue]
                                                                                minor:[self.minor.text intValue]
                                                                           identifier:self.identifier.text];
-            NSNumber *measuredPower = nil;
-            if ([self.power.text intValue] != 0) {
-                measuredPower = [NSNumber numberWithInt:[self.power.text intValue]];
-            }
             
-            [self.manager startAdvertising:[beacon peripheralDataWithMeasuredPower:measuredPower]];
+            NSDictionary *proximityData = [beacon peripheralDataWithMeasuredPower:nil];
+            [self.manager startAdvertising:proximityData];
+            
             [sender setTitle:@"Turn iBeacon off" forState:UIControlStateNormal];
         } else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The UUID format is invalid" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];

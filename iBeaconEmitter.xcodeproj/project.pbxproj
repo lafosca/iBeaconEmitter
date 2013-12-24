@@ -22,7 +22,6 @@
 		A036467018698BA100E400C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A036464F18698BA100E400C4 /* UIKit.framework */; };
 		A036467818698BA100E400C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A036467618698BA100E400C4 /* InfoPlist.strings */; };
 		A036467A18698BA100E400C4 /* iBeaconEmitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A036467918698BA100E400C4 /* iBeaconEmitterTests.m */; };
-		A036468518698C4700E400C4 /* BNMBeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = A036468418698C4700E400C4 /* BNMBeaconRegion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +55,6 @@
 		A036467518698BA100E400C4 /* iBeaconEmitterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBeaconEmitterTests-Info.plist"; sourceTree = "<group>"; };
 		A036467718698BA100E400C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A036467918698BA100E400C4 /* iBeaconEmitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBeaconEmitterTests.m; sourceTree = "<group>"; };
-		A036468318698C4600E400C4 /* BNMBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNMBeaconRegion.h; sourceTree = "<group>"; };
-		A036468418698C4700E400C4 /* BNMBeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNMBeaconRegion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +114,6 @@
 		A036465118698BA100E400C4 /* iBeaconEmitter */ = {
 			isa = PBXGroup;
 			children = (
-				A036468318698C4600E400C4 /* BNMBeaconRegion.h */,
-				A036468418698C4700E400C4 /* BNMBeaconRegion.m */,
 				A036465A18698BA100E400C4 /* AppDelegate.h */,
 				A036465B18698BA100E400C4 /* AppDelegate.m */,
 				A036465D18698BA100E400C4 /* Main_iPhone.storyboard */,
@@ -259,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A036466518698BA100E400C4 /* ViewController.m in Sources */,
-				A036468518698C4700E400C4 /* BNMBeaconRegion.m in Sources */,
 				A036465C18698BA100E400C4 /* AppDelegate.m in Sources */,
 				A036465818698BA100E400C4 /* main.m in Sources */,
 			);
