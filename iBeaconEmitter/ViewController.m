@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "BNMBeaconRegion.h"
 @import CoreLocation;
 
 @interface ViewController ()
@@ -96,8 +95,12 @@
                                                                                major:[self.major.text intValue]
                                                                                minor:[self.minor.text intValue]
                                                                           identifier:self.identifier.text];
+            NSNumber *measuredPower = nil;
+            if ([self.power.text intValue] != 0) {
+                measuredPower = [NSNumber numberWithInt:[self.power.text intValue]];
+            }
             
-            NSDictionary *proximityData = [beacon peripheralDataWithMeasuredPower:nil];
+            NSDictionary *proximityData = [beacon peripheralDataWithMeasuredPower:measuredPower];
             [self.manager startAdvertising:proximityData];
             
             [sender setTitle:@"Turn iBeacon off" forState:UIControlStateNormal];
