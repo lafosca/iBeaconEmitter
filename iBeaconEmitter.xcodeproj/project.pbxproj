@@ -202,6 +202,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Lafosca;
 				TargetAttributes = {
+					A036464718698BA100E400C4 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					A036466B18698BA100E400C4 = {
 						TestTargetID = A036464718698BA100E400C4;
 					};
@@ -474,6 +481,7 @@
 				A036467F18698BA100E400C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A036468018698BA100E400C4 /* Build configuration list for PBXNativeTarget "iBeaconEmitterTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +490,7 @@
 				A036468218698BA100E400C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
